@@ -1,0 +1,15 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<p>here's our index of all posts:</p>
+<% @posts.each do |post| %>
+  <ul>
+    <li>
+      <%= post.title %>
+      <%= post.body %>
+      <% if post.user_id == current_user.id %>
+        <p>Your post, here wold be a link to edit</p>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
